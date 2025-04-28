@@ -209,7 +209,7 @@ Dere ser to dører i andre siden av rommet, men bare en av de er åpen.
 [[Utforsk mer-&gt;Tempelutforsking]]
 [[Gå inn døra -&gt;Første Tempelrom]]</tw-passagedata><tw-passagedata pid="22" name="Tempelutforsking" tags="" position="400,1300" size="100,100">Etter en stund uten funn bestemmer dere dere for å gå inn døra.
 
-[[Neste-&gt;Første Tempelrom]]</tw-passagedata><tw-passagedata pid="23" name="Første Tempelrom" tags="" position="400,1500" size="100,100">(set: $Code to (str: (random: 1000, 9999)))\
+[[Neste-&gt;Første Tempelrom]]</tw-passagedata><tw-passagedata pid="23" name="Første Tempelrom" tags="" position="400,1500" size="100,100">(set: $Code to (str: (random: 2000, 9999)))\
 
 \Idet dere går inn lukkes døra bak dere, og dere hører en lyd fra rommet dere var i før.
 Dere ser en dør i andre siden av rommet, men den er lukket.
@@ -220,7 +220,7 @@ Dere ser en dør i andre siden av rommet, men den er lukket.
 [[Gå til døra på andre siden-&gt;Første Tempelrom: Dør]]</tw-passagedata><tw-passagedata pid="24" name="Første Tempelrom: Utforsking" tags="" position="300,1600" size="100,100">(set: _CurrentFind to (either: 1, 2, 3, 4))\
 
 \{
-	(if: _CurrentFind is 1)[Etter litt leting finner dere noe på veggen; det står &quot;I) (substring: $Code, 1, 1)&quot;]
+	(if: _CurrentFind is 4)[Dere leter en god stund, men plutselig finner dere noe på døra dere kom fra; det står &quot;IV) (for: each _Number, ...(range: 1, (number: (substring: $Code, 1, 1))))[- ]&quot;]
 }\
 
 \{
@@ -232,7 +232,7 @@ Dere ser en dør i andre siden av rommet, men den er lukket.
 }\
 
 \{
-	(if: _CurrentFind is 4)[Dere leter en god stund, men plutselig finner dere noe på døra dere kom fra; det står &quot;IV) (for: each _Number, ...(range: 1, (number: (substring: $Code, 4, 4))))[x]&quot;]
+	(if: _CurrentFind is 1)[Etter litt leting finner dere noe på veggen; det står &quot;IV) (substring: $Code, 4, 4)&quot;]
 }
 
 [[Utforsk mer-&gt;Første Tempelrom: Utforsking]]
